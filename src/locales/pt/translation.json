@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "title": "Cardápio do Restaurante",
+    "checkout": "Finalizar Pedido",
+    "addToCart": "Adicionar ao Carrinho",
+    "item": "Item",
+    "price": "Preço",
+    "cart": "Seu Carrinho",
+    "orderSuccess": "Pedido realizado com sucesso!"
+  }
+}

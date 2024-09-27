@@ -1,0 +1,11 @@
+{
+    "menu": {
+      "title": "Restaurant Menu",
+      "checkout": "Checkout",
+      "addToCart": "Add to Cart",
+      "item": "Item",
+      "price": "Price",
+      "cart": "Your Cart",
+      "orderSuccess": "Order placed successfully!"
+    }
+  }
