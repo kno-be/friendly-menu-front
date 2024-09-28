@@ -1,6 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';  // Importando a página Home
+import Navbar from './components/Navbar';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -10,16 +13,14 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>{t('menu.title')}</h1>
-
-      {/* Adicionando botões para trocar de idioma */}
-      <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('pt')}>Português</button>
-
-      <h2>{t('menu.cart')}</h2>
-      <button>{t('menu.checkout')}</button>
-    </div>
+    <Router>
+      <div>
+        <Navbar /> 
+        <Routes>
+          <Route path="/" element={<Home />} /> {/* Ajuste do Route */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

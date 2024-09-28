@@ -1,0 +1,115 @@
+.navbar {
+    width: 100%;
+    height: 1rem;
+    font-family: 'Roboto-light', sans-serif;
+    font-size: 2rem;
+    background-color: black;
+    color: aliceblue;
+    position: absolute;
+    top: 0rem;
+    padding: 1rem 4rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar-languages {
+    font-family: 'Roboto-light';
+  }
+  
+  .navbar-languages a {
+    color: white;
+    padding-right: 1rem;
+  }
+  
+  .navbar.change {
+    position: fixed;
+    height: 100vh;
+    align-items: baseline;
+  }
+  
+  .navbar-logo a {
+    font-family: 'Pacifico', cursive;
+    font-size: 16px;
+    color: aliceblue;
+    letter-spacing: 0.2rem;
+  }
+  
+  /* MENU */
+  .nav {
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    right: 2.8rem;
+    bottom: 5rem;
+    background-color: #E6233C;
+    border: 0.5px solid white;
+    border-radius: 50%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+  }
+  
+  .line {
+    width: 100%;
+    height: 0.2rem;
+    background-color: #eee;
+    transition: transform 0.3s;
+  }
+  
+  .line-1 {
+    width: 50%;
+  }
+  
+  .line-3 {
+    width: 50%;
+    margin-left: auto;
+  }
+  
+  .change .line-1 {
+    transform: translate(100%, 1rem) rotate(-35deg);
+    transform-origin: right;
+  }
+  
+  .change .line-3 {
+    transform: translateY(-1rem) rotate(35deg);
+    transform-origin: right;
+  }
+  
+  .nav-list {
+    width: 100%;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .change .nav-list {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s 0.3s;
+  }
+  
+  .nav-link {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    color: #fff;
+    margin: 2rem 0;
+    transition: color 0.4s;
+  }
+  
+  .nav-link:hover {
+    color: #9e0e09;
+  }
+  
