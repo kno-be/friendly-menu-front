@@ -30,3 +30,23 @@ html {
   flex-direction: column;
 }
 
+.cart-actions {
+  position: fixed; /* Fica fixo no canto inferior */
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.cart-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #E6233C; /* Cor do botão */
+  color: white;
+  cursor: pointer;
+}
+
+.cart-actions button:hover {
+  background-color: #c52032; /* Cor do botão ao passar o mouse */
+}

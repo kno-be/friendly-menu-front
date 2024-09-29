@@ -12,6 +12,8 @@ function App() {
     const savedCart = localStorage.getItem('cartItems');
     return savedCart ? JSON.parse(savedCart) : [];
   });
+  const url = process.env.URL_API;
+
 
   // const cartItemsView = JSON.parse(localStorage.getItem('cartItems'));
   // console.log(cartItemsView);
@@ -44,6 +46,38 @@ function App() {
     localStorage.removeItem('cartItems');
   };
 
+  const placeOrder = async () => {
+    if (cartItems.length === 0) {
+      alert("Seu carrinho está vazio!");
+      return;
+    }
+
+    const orderData = {
+      text: cartItems,
+      // Adicione outros dados necessários para o pedido, como endereço, etc.
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar o pedido.");
+      }
+
+      alert("Pedido enviado com sucesso!");
+      clearCart(); // Limpa o carrinho após o pedido ser enviado
+    } catch (error) {
+      console.error("Erro:", error);
+      alert("Não foi possível enviar o pedido.");
+    }
+  };
+
   useEffect(() => {
     // Atualiza o localStorage sempre que cartItems mudar
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -56,6 +90,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart} />} />{/* Ajuste do Route */}
         </Routes>
+        <div className="cart-actions">
+          <button onClick={clearCart}>Limpar Carrinho</button>
+          <button onClick={placeOrder}>Enviar Pedido</button>
+        </div>
       </div>
     </Router>
   );
