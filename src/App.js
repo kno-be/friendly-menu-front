@@ -12,7 +12,7 @@ function App() {
     const savedCart = localStorage.getItem('cartItems');
     return savedCart ? JSON.parse(savedCart) : [];
   });
-  const url = process.env.URL_API;
+  const url = process.env.REACT_APP_URL_API;
 
 
   // const cartItemsView = JSON.parse(localStorage.getItem('cartItems'));
